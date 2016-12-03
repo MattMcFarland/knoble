@@ -31,10 +31,13 @@ module.exports = {
   },
   reducers: {
     addStory: (data, state) => {
-      return state.lanes[data.index].stories.push({ title: '', body: '' })
+      return state.lanes[data.index].stories.push({ title: 'change me', body: 'change me' })
     },
     addLane: (data, state) => {
-      return state.lanes.push({title: '', stories: []})
+      return state.lanes.push({title: 'change me', stories: []})
+    },
+    removeStory: ({laneIndex, storyIndex}, state) => {
+      return state.lanes[laneIndex].stories.splice(storyIndex, 1)
     }
     // update: (data, state) => ({ title: data.value })
   },

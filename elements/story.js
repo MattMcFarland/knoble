@@ -4,7 +4,7 @@
 // and allow them to easily move outisde of the app.
 const html = require('bel')
 
-function story ({title, body}, send) {
+function story ({title, body}, laneIndex, storyIndex, send) {
   return html`
     <li class="story">
       <header><h3>${title}</h3></header>
@@ -12,7 +12,7 @@ function story ({title, body}, send) {
         ${body}
       </section>
       <footer>
-        <button>Details</button>
+        <button onclick=${e => send('removeStory', { laneIndex, storyIndex })}>Remove</button>
       </footer>
     </li>
   `
