@@ -15,6 +15,7 @@ button:focus {
     /* text-decoration: underline; */
     outline: none;
 }
+
 button:hover {
     color: #085ca0;
 }
@@ -54,7 +55,11 @@ button:hover {
   color: #888;
   background: #ffeb3b;
 }
-
+.lane header h2 {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
 .lane .story {
   width: 280px;
   height: 220px;
