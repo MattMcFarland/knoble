@@ -45,6 +45,9 @@ module.exports = {
     // update: (data, state) => ({ title: data.value })
   },
   effects: {
+    moveStory: (data, state) => {
+      console.log(data)
+    }
     // asynchronous operations that don't modify state directly.
     // Triggered by actions, can call actions. Signature of (data, state, send, done)
     /*

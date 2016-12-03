@@ -5,8 +5,17 @@
 const html = require('bel')
 
 function story ({title, body}, laneIndex, storyIndex, send) {
+  function handleDragStart (e) {
+    e.dataTransfer.setData('text/plain', JSON.stringify({ laneIndex, storyIndex }))
+    e.dataTransfer.dropEffect = 'move'
+    console.log(e)
+  }
   return html`
-    <li class="story">
+    <li
+      draggable="true"
+      class="story"
+      ondragstart=${handleDragStart}
+      >
       <header><h3>${title}</h3></header>
       <section class="body">
         ${body}
