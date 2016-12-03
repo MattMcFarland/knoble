@@ -19,8 +19,13 @@ button:hover {
     color: #085ca0;
 }
 
+.kanban {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+}
+
 .lane {
-  float: left;
   background: #fafafa;
   border-right: thin solid #eee;
 }
