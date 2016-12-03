@@ -5,12 +5,14 @@
   "license": "MIT",
   "scripts": {
     "build:prod": "scripts/build-prod.sh",
-    "start": "budo ./client.js --live --pushstate --open -- -g es2040",
+    "start": "budo ./client.js --live --pushstate --open -- -t sheetify/transform -g es2040",
     "lint": "standard --verbose | snazzy",
     "test": "npm run lint"
   },
   "dependencies": {
-    "choo": "^3.2.0"
+    "choo": "^3.2.0",
+    "normalize.css": "^5.0.0",
+    "sheetify": "^6.0.1"
   },
   "devDependencies": {
     "browserify": "^13.0.1",

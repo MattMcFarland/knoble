@@ -1,11 +1,40 @@
 module.exports = {
   state: {
-    /* initial values of state inside the model */
-    // title: 'Set the title'
+    lanes: [
+      {
+        title: 'todo',
+        stories: [
+          {
+            title: 'cool story bro',
+            body: 'hello world'
+          },
+          {
+            title: 'cool story bro 2',
+            body: 'hello world again'
+          }
+        ]
+      },
+      {
+        title: 'in progress',
+        stories: [
+          {
+            title: 'cool story bro',
+            body: 'hello world'
+          },
+          {
+            title: 'cool story bro 2',
+            body: 'hello world again'
+          }
+        ]
+      }
+    ]
   },
   reducers: {
-    /* synchronous operations that modify state. Triggered by actions. Signature of (data, state). */
-    update: (data, state) => ({ title: data.value })
+    // addStory: (data, state) => {
+    //   return state.lanes[data.index].stories.push({ title: '', body: '' })
+    // },
+    // addLane: (data, state) => ({}),
+    // update: (data, state) => ({ title: data.value })
   },
   effects: {
     // asynchronous operations that don't modify state directly.

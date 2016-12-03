@@ -1,0 +1,81 @@
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+button {
+    border: none;
+    background: none;
+    color: #2196F3;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:focus {
+    text-decoration: underline;
+    outline: none;
+}
+button:hover {
+    color: #085ca0;
+}
+
+.lane {
+  float: left;
+  background: #fafafa;
+  border-right: thin solid #eee;
+}
+
+.lane > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 320px;
+}
+
+.btn-add-story, .btn-add-lane {
+  width: 320px;
+  height: 240px;
+  font-size: 120px;
+  color: #999;
+  background: transparent;
+  border: thin dashed #888;
+}
+
+.btn-add-story:hover, .btn-add-lane:hover {
+  color: #888;
+  background: #ffeb3b;
+}
+
+.lane .story {
+  width: 280px;
+  height: 220px;
+  margin: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.story header {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+  border-bottom: thin solid #eee;
+}
+
+.story h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+.story .body {
+  height: 124px;
+  padding: 0.5em 1em;
+  background: #fefefe;
+}
+
+.story footer {
+  border-top: thin solid #eee;
+  padding: 8px;
+  background: white;
+  height: 20px;
+}
+
