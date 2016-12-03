@@ -5,7 +5,7 @@
 const html = require('bel')
 
 function removeLane (index, send) {
-  return html`<button onclick=${e => send('removeLane')} class="btn-remove-lane">-</button>`
+  return html`<button onclick=${e => send('removeLane', index)} class="btn-remove-lane">-</button>`
 }
 
 module.exports = removeLane

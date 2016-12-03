@@ -38,6 +38,9 @@ module.exports = {
     },
     removeStory: ({laneIndex, storyIndex}, state) => {
       return state.lanes[laneIndex].stories.splice(storyIndex, 1)
+    },
+    removeLane: (index, state) => {
+      return state.lanes.splice(index, 1)
     }
     // update: (data, state) => ({ title: data.value })
   },
