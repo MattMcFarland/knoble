@@ -4,7 +4,7 @@
 // and allow them to easily move outisde of the app.
 const html = require('bel')
 
-function addLane () {
+function addLane (send) {
   return html`
     <section class="lane">
     <header><h2>todo</h2></header>

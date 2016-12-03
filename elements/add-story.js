@@ -4,7 +4,7 @@
 // and allow them to easily move outisde of the app.
 const html = require('bel')
 
-function addStory () {
+function addStory (send) {
   return html`
     <section class="add-story">
       <button class="btn-add-story">+</button>

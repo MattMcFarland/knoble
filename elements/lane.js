@@ -6,7 +6,7 @@ const html = require('bel')
 const story = require('./story')
 const addStory = require('./add-story')
 
-function lane ({title, stories}) {
+function lane ({title, stories}, send) {
   return html`
     <section class="lane">
       <header><h2>${title}</h2></header>
@@ -14,7 +14,7 @@ function lane ({title, stories}) {
         ${stories.map(storyData =>
           html`<li>${story(storyData)}</li>`
         )}
-        <li>${addStory()}</li>
+        <li>${addStory(send)}</li>
       </ul>
     </section>
   `

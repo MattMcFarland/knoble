@@ -4,7 +4,7 @@
 // and allow them to easily move outisde of the app.
 const html = require('bel')
 
-function story ({title, body}) {
+function story ({title, body}, send) {
   return html`
     <li class="story">
       <header><h3>${title}</h3></header>
