@@ -4,10 +4,10 @@
 // and allow them to easily move outisde of the app.
 const html = require('bel')
 
-function addStory (send) {
+function addStory (index, send) {
   return html`
     <section class="add-story">
-      <button class="btn-add-story">+</button>
+      <button onclick=${e => send('addStory', { index })} class="btn-add-story">+</button>
     </section>
   `
 }

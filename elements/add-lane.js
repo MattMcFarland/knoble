@@ -9,7 +9,7 @@ function addLane (send) {
     <section class="lane">
     <header><h2>todo</h2></header>
       <ul>
-        <li><button class="btn-add-lane">+</button></li>
+        <li><button onclick=${e => send('addLane')} class="btn-add-lane">+</button></li>
       </ul>
     </section>
   `

@@ -4,7 +4,7 @@ const addLane = require('../elements/add-lane')
 
 module.exports = (state, prev, send) => html`
   <main>
-    ${state.lanes.map(laneData => lane(laneData, send))}
+    ${state.lanes.map((laneData, index) => lane(laneData, index, send))}
     ${addLane(send)}
   </main>
 `

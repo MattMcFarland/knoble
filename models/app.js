@@ -30,10 +30,12 @@ module.exports = {
     ]
   },
   reducers: {
-    // addStory: (data, state) => {
-    //   return state.lanes[data.index].stories.push({ title: '', body: '' })
-    // },
-    // addLane: (data, state) => ({}),
+    addStory: (data, state) => {
+      return state.lanes[data.index].stories.push({ title: '', body: '' })
+    },
+    addLane: (data, state) => {
+      return state.lanes.push({title: '', stories: []})
+    }
     // update: (data, state) => ({ title: data.value })
   },
   effects: {
