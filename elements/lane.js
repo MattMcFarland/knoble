@@ -5,6 +5,7 @@
 const html = require('bel')
 const story = require('./story')
 const addStory = require('./add-story')
+const removeLane = require('./remove-lane')
 
 function lane ({title, stories}, laneIndex, send) {
   return html`
@@ -15,6 +16,7 @@ function lane ({title, stories}, laneIndex, send) {
           html`<li>${story(storyData, laneIndex, storyIndex, send)}</li>`
         )}
         <li>${addStory(laneIndex, send)}</li>
+        ${(stories.length === 0 && laneIndex > 0) ? html`<li>${removeLane(laneIndex, send)}</li>` : ''}
       </ul>
     </section>
   `
