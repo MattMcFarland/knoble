@@ -15,22 +15,11 @@ function story ({title, body}, laneIndex, storyIndex, send) {
     this.classList.remove('dragstart')
   }
   return html`
-    <div>
-      <section
-        ondragstart=${handleDragStart}
-        ondragend=${handleDragEnd}
-        draggable="true"
-        class="story"
-      >
+    <section draggable="true" ondragstart=${handleDragStart} ondragend=${handleDragEnd} class="story">
       <header><h3>${title}</h3></header>
-      <section class="body">
-        ${body}
-      </section>
-      <footer>
-        <button onclick=${e => send('removeStory', { laneIndex, storyIndex })}>Remove</button>
-      </footer>
-      </section>
-    </div>
+      <section class="body">${body}</section>
+      <footer><button onclick=${e => send('removeStory', { laneIndex, storyIndex })}>Remove</button></footer>
+    </section>
   `
 }
 
