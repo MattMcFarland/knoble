@@ -8,7 +8,7 @@ const addStory = require('./add-story')
 const removeLane = require('./remove-lane')
 const dropzone = require('./dropzone')
 
-function lane ({title, stories}, laneIndex, send) {
+function lane ({title, stories}, laneIndex, state, send) {
   return html`
     <section class="lane">
       <header><h2>${title}</h2></header>
@@ -16,7 +16,7 @@ function lane ({title, stories}, laneIndex, send) {
         ${stories.map((storyData, storyIndex) => html`
           <li>
           ${dropzone(laneIndex, storyIndex, send)}
-          ${story(storyData, laneIndex, storyIndex, send)}
+          ${story(storyData, state, laneIndex, storyIndex, send)}
           ${dropzone(laneIndex, storyIndex + 1, send)}
           </li>
         `)}

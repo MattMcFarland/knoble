@@ -102,8 +102,9 @@ button:hover {
 }
 
 .story .body {
-  height: 124px;
-  padding: 0.5em 1em;
+  height: 133px;
+  padding: 6px;
+  overflow: hidden;
   background: #fefefe;
 }
 
@@ -114,3 +115,50 @@ button:hover {
   height: 20px;
 }
 
+.inherit-all {
+  padding: inherit;
+  margin: inherit;
+  color: inherit;
+  font-size: inherit;
+  border: inherit;
+  display: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  outline: none;
+  line-height: inherit;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: transparent;
+  vertical-align: top;
+  white-space: pre;
+}
+.inherit-all:hover {
+  color: inherit;
+}
+.story .body {
+  vertical-align: top;
+  white-space: pre;
+  overflow:hidden;
+}
+
+textarea.inherit-all {
+  width: 96%;
+  background: #d0f3ff;
+  resize: none;
+  height: 90%;
+}
+
+h3 .inherit-all {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+h3 textarea.inherit-all {
+  line-height: 1.25;
+  height: 1.35em;
+  width: 100%;
+  margin: -2px 0 -3px 0;
+  padding: 0;
+}

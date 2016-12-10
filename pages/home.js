@@ -4,7 +4,7 @@ const addLane = require('../elements/add-lane')
 
 module.exports = (state, prev, send) => html`
   <main class="kanban">
-    ${state.lanes.map((laneData, index) => lane(laneData, index, send))}
+    ${state.lanes.map((laneData, laneIndex) => lane(laneData, laneIndex, state, send))}
     ${addLane(send)}
   </main>
 `

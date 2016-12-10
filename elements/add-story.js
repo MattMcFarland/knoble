@@ -6,7 +6,7 @@ const html = require('bel')
 const dragEvents = require('../lib/dragEvents')
 
 function addStory (index, send) {
-  let { getTargetArea, handleDrag, handleDragEnter, handleDragLeave, handleDragOver, handleDragEnd } = dragEvents()
+  let { getTargetArea, handleDrag, handleDragEnter, handleDragLeave, handleDragOver, handleDragEnd } = dragEvents(send)
 
   function handleDrop (e) {
     let targetArea = getTargetArea()

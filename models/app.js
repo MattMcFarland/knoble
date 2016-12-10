@@ -1,5 +1,6 @@
 module.exports = {
   state: {
+    editKey: '',
     lanes: [
       {
         title: 'todo',
@@ -48,10 +49,22 @@ module.exports = {
       newState.lanes[from.laneIndex].stories.splice(from.storyIndex, 1)
       newState.lanes[to.laneIndex].stories.splice(to.storyIndex, 0, story)
       return newState
+    },
+    setEditKey: (editKey, state) => ({ editKey }),
+    updateStoryData: ({laneIndex, storyIndex, key, value}, state) => {
+      const newState = Object.assign({}, state)
+      newState.lanes[laneIndex].stories[storyIndex][key] = value
+      return newState
     }
-    // update: (data, state) => ({ title: data.value })
   },
   effects: {
+    updateText: ({editKey, value}, state, send, done) => {
+      const type = editKey.split('@')[0]
+      if (type === 'STORY') {
+        const [laneIndex, storyIndex, key] = editKey.split('@')[1].split(',')
+        send('updateStoryData', { laneIndex, storyIndex, key, value }, () => send('setEditKey', null, done))
+      }
+    }
     // asynchronous operations that don't modify state directly.
     // Triggered by actions, can call actions. Signature of (data, state, send, done)
     /*
