@@ -162,3 +162,13 @@ h3 textarea.inherit-all {
   margin: -2px 0 -3px 0;
   padding: 0;
 }
+
+h2 textarea.inherit-all {
+  line-height: 1.25;
+  height: 1.35em;
+  width: 100%;
+  margin: -2px 0 -3px 0;
+  padding: 0;
+}
+
+

@@ -7,11 +7,13 @@ const story = require('./story')
 const addStory = require('./add-story')
 const removeLane = require('./remove-lane')
 const dropzone = require('./dropzone')
+const Editable = require('./editable')
 
 function lane ({title, stories}, laneIndex, state, send) {
+  const editable = Editable(state, send)
   return html`
     <section class="lane">
-      <header><h2>${title}</h2></header>
+      <header><h2>${editable({ type: 'lane', laneIndex, key: 'title', text: title })}</h2></header>
       <ul>
         ${stories.map((storyData, storyIndex) => html`
           <li>

@@ -7,7 +7,7 @@ const html = require('bel')
 function addLane (send) {
   return html`
     <section class="lane">
-    <header><h2>add new</h2></header>
+    <header><h2><button onclick=${e => send('addLane')} class="inherit-all">add new</button></h2></header>
       <ul>
         <li><button onclick=${e => send('addLane')} class="btn-add-lane">+</button></li>
       </ul>

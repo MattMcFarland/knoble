@@ -55,6 +55,11 @@ module.exports = {
       const newState = Object.assign({}, state)
       newState.lanes[laneIndex].stories[storyIndex][key] = value
       return newState
+    },
+    updateLaneData: ({ laneIndex, key, value }, state) => {
+      const newState = Object.assign({}, state)
+      newState.lanes[laneIndex][key] = value
+      return newState
     }
   },
   effects: {
@@ -63,6 +68,10 @@ module.exports = {
       if (type === 'STORY') {
         const [laneIndex, storyIndex, key] = editKey.split('@')[1].split(',')
         send('updateStoryData', { laneIndex, storyIndex, key, value }, () => send('setEditKey', null, done))
+      }
+      if (type === 'LANE') {
+        const [laneIndex, key] = editKey.split('@')[1].split(',')
+        send('updateLaneData', { laneIndex, key, value }, () => send('setEditKey', null, done))
       }
     }
     // asynchronous operations that don't modify state directly.
