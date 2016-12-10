@@ -5,11 +5,11 @@ module.exports = {
         title: 'todo',
         stories: [
           {
-            title: 'cool story bro',
+            title: 'zero - zero',
             body: 'hello world'
           },
           {
-            title: 'cool story bro 2',
+            title: 'zero - one',
             body: 'hello world again'
           }
         ]
@@ -18,11 +18,11 @@ module.exports = {
         title: 'in progress',
         stories: [
           {
-            title: 'cool story bro',
+            title: 'one - zero',
             body: 'hello world'
           },
           {
-            title: 'cool story bro 2',
+            title: 'one - one',
             body: 'hello world again'
           }
         ]
@@ -41,13 +41,17 @@ module.exports = {
     },
     removeLane: (index, state) => {
       return state.lanes.splice(index, 1)
+    },
+    moveStory: ({from, to}, state) => {
+      const newState = Object.assign({}, state)
+      const story = Object.assign({}, state.lanes[from.laneIndex].stories[from.storyIndex])
+      newState.lanes[from.laneIndex].stories.splice(from.storyIndex, 1)
+      newState.lanes[to.laneIndex].stories.splice(to.storyIndex, 0, story)
+      return newState
     }
     // update: (data, state) => ({ title: data.value })
   },
   effects: {
-    moveStory: (data, state) => {
-      console.log(data)
-    }
     // asynchronous operations that don't modify state directly.
     // Triggered by actions, can call actions. Signature of (data, state, send, done)
     /*

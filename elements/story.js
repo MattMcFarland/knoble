@@ -8,13 +8,19 @@ function story ({title, body}, laneIndex, storyIndex, send) {
   function handleDragStart (e) {
     e.dataTransfer.setData('text/plain', JSON.stringify({ laneIndex, storyIndex }))
     e.dataTransfer.dropEffect = 'move'
-    console.log(e)
+    this.classList.add('dragstart')
+  }
+  function handleDragEnd (e) {
+    e.preventDefault()
+    this.classList.remove('dragstart')
   }
   return html`
-    <li
-      draggable="true"
-      class="story"
-      ondragstart=${handleDragStart}
+    <div>
+      <section
+        ondragstart=${handleDragStart}
+        ondragend=${handleDragEnd}
+        draggable="true"
+        class="story"
       >
       <header><h3>${title}</h3></header>
       <section class="body">
@@ -23,7 +29,8 @@ function story ({title, body}, laneIndex, storyIndex, send) {
       <footer>
         <button onclick=${e => send('removeStory', { laneIndex, storyIndex })}>Remove</button>
       </footer>
-    </li>
+      </section>
+    </div>
   `
 }
 
