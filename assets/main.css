@@ -39,12 +39,14 @@ button:hover {
 }
 
 .btn-add-story, .btn-add-lane, .btn-remove-lane {
-  width: 320px;
-  height: 240px;
+  width: 280px;
+  height: 220px;
   font-size: 120px;
   color: #999;
   background: transparent;
   border: thin dashed #888;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 .btn-remove-lane:hover {
   color: maroon;
